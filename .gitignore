@@ -1,0 +1,15 @@
+.idea
+bin
+lib
+*.DS_Store
+
+*.in
+*.out
+
+*.o
+*.exe
+*.depend
+*.layout
+
+bazel-*
+cmake-*
