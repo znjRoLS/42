@@ -1,0 +1,1 @@
+add_library(base base.h logging.h logging.cpp time_class.h time_class.cpp ostream_newline.h ostream_newline.cpp)

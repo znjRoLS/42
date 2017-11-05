@@ -1,0 +1,1 @@
+build --cxxopt='-xWerror -std=c++11'

@@ -14,6 +14,7 @@ set(BIN_PREFIX cmake-bin/)
 
 include_directories(./)
 
+add_subdirectory(base)
 add_subdirectory(strings)
 add_subdirectory(main)
 add_subdirectory(googletest)
