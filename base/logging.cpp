@@ -4,5 +4,8 @@
 
 #include "logging.h"
 
+// Default logging output
 std::ostream& _LOG_OUTPUT = std::cout;
+
+// Default logging level
 LOG_LEVEL _LOG_LEVEL = LOG_LEVEL::ERROR;
