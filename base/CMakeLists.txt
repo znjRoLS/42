@@ -1,1 +1,1 @@
-add_library(base base.h logging.h logging.cpp time_class.h time_class.cpp ostream_newline.h ostream_newline.cpp)
+add_library(base logging.cpp time_class.cpp ostream_newline.cpp flags.cpp static_initialization.cpp)

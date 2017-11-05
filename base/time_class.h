@@ -8,6 +8,8 @@
 #include <chrono>
 #include <iostream>
 
+#include "common.h"
+
 class Time {
 public:
   explicit Time(std::chrono::system_clock::time_point time_point);

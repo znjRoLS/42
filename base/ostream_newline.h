@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+#include "common.h"
+
 // Adds newline to the output when deleted.
 // Why is this class created? Example
 //   OStreamNewline(std::cout) << "test" << "test2";

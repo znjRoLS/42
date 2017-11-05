@@ -8,9 +8,19 @@
 #include "base/base.h"
 #include "strings/string_split.h"
 
+DEFINE_FLAG_STRING(test_flag, "default_val", "desription");
+
+DECLARE_FLAG_INT(CURRENT_LOG_LEVEL);
+
 using namespace std;
 
 int main(int argc, char *argv[]) {
+
+  LOG(ERROR) << FLAG_test_flag;
+
+  ProcessFlags(&argc, &argv);
+
+  LOG(ERROR) << FLAG_test_flag;
 
   string test_string = "test.test2.test3";
   vector<string> test_vector;
@@ -19,7 +29,7 @@ int main(int argc, char *argv[]) {
   LOG(INFO) << "neki info1";
   LOG(ERROR) << "neki error";
 
-  _LOG_LEVEL = LOG_LEVEL::DEBUG;
+  FLAG_CURRENT_LOG_LEVEL = LOG_LEVEL::DEBUG;
 
   LOG(INFO) << "neki info2";
 

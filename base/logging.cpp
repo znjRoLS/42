@@ -8,4 +8,4 @@
 std::ostream& _LOG_OUTPUT = std::cout;
 
 // Default logging level
-LOG_LEVEL _LOG_LEVEL = LOG_LEVEL::ERROR;
+DEFINE_FLAG_INT(CURRENT_LOG_LEVEL, 2, "Current log level");
