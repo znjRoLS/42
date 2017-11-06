@@ -14,22 +14,30 @@
 //   OStreamNewline(std::cout) << "test" << "test2";
 // will also add newline at the end.
 
-class OStreamNewline: public std::ostream {
+class OStreamNewline{
 public:
   explicit OStreamNewline(std::ostream& output);
   ~OStreamNewline();
 private:
   template<typename T>
-  friend OStreamNewline& operator<<(OStreamNewline& output, T object);
+  friend std::ostream& operator<<(OStreamNewline output, T& object);
+  template<typename T>
+  friend std::ostream& operator<<(OStreamNewline output, T object);
 
   std::ostream& output_;
 
 };
 
 template<typename T>
-OStreamNewline& operator<<(OStreamNewline& output, T object) {
+std::ostream& operator<<(OStreamNewline output, T& object) {
   output.output_ << object;
-  return output;
+  return output.output_;
+}
+
+template<typename T>
+std::ostream& operator<<(OStreamNewline output, T object) {
+  output.output_ << object;
+  return output.output_;
 }
 
 #endif //INC_42_OSTREAM_NEWLINE_H

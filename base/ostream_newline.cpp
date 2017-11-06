@@ -4,6 +4,8 @@
 
 #include "ostream_newline.h"
 
+#include <iostream>
+
 OStreamNewline::OStreamNewline(std::ostream &output):
     output_(output) {
 }

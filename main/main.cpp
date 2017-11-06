@@ -16,7 +16,9 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
-  LOG(ERROR) << FLAG_test_flag;
+  FLAG_CURRENT_LOG_LEVEL  = LOG_LEVEL::DEBUG;
+
+  LOG(ERROR) << FLAG_test_flag << std::endl;
 
   ProcessFlags(&argc, &argv);
 

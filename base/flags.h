@@ -10,9 +10,9 @@
 #include "common.h"
 #include "static_initialization.h"
 
-extern std::unordered_map<string, string> flag_descriptions_;
-extern std::unordered_map<string, string*> flags_string_;
-extern std::unordered_map<string, int*> flags_int_;
+std::unordered_map<string, string>& flag_descriptions();
+std::unordered_map<string, string*>& flags_string();
+std::unordered_map<string, int*>& flags_int();
 
 //#define DEFINE_FLAG(type, name, default_value, description) \
 //  type FLAG_##name = default_value; \
@@ -24,9 +24,9 @@ extern std::unordered_map<string, int*> flags_int_;
 #define DEFINE_FLAG_STRING(name, default_value, description) \
   string FLAG_##name = default_value; \
   STATIC_INITIALIZATION(name, ([](void) { \
-    flags_string_.insert({#name, &FLAG_##name}); \
-    flag_descriptions_.insert({#name, description}); \
-  }))
+    flags_string().insert({#name, &FLAG_##name}); \
+    flag_descriptions().insert({#name, description}); \
+}))
 
 #define DECLARE_FLAG_STRING(name) \
   extern string FLAG_##name;
@@ -34,8 +34,8 @@ extern std::unordered_map<string, int*> flags_int_;
 #define DEFINE_FLAG_INT(name, default_value, description) \
   int FLAG_##name = default_value; \
   STATIC_INITIALIZATION(name, ([](void) { \
-    flags_int_.insert({#name, &FLAG_##name}); \
-    flag_descriptions_.insert({#name, description}); \
+    flags_int().insert({#name, &FLAG_##name}); \
+    flag_descriptions().insert({#name, description}); \
   }))
 
 #define DECLARE_FLAG_INT(name) \

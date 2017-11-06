@@ -17,7 +17,8 @@ public:
 #define CONCAT(x,y,z) x ## y ## z
 #define CONCAT_EXPAND(x,y,z) CONCAT(x,y,z)
 
-// use this only with truly unique names
+// use this only with truly unique names across files
+// can be used with same name in one compile unit, as counter will be unique
 #define STATIC_INITIALIZATION(unique_name, lambda) \
 StaticInitializator CONCAT_EXPAND(static_initializator_, unique_name, __COUNTER__)(lambda);
 
