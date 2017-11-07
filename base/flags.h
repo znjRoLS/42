@@ -14,13 +14,6 @@ std::unordered_map<string, string>& flag_descriptions();
 std::unordered_map<string, string*>& flags_string();
 std::unordered_map<string, int*>& flags_int();
 
-//#define DEFINE_FLAG(type, name, default_value, description) \
-//  type FLAG_##name = default_value; \
-//  STATIC_INITIALIZATION(name, ([](void) { \
-//    flag_descriptions_.insert({#name, description}); \
-//    flags_.insert({#name, &FLAG_##name}); \
-//  }))
-
 #define DEFINE_FLAG_STRING(name, default_value, description) \
   string FLAG_##name = default_value; \
   STATIC_INITIALIZATION(name, ([](void) { \
@@ -43,6 +36,5 @@ std::unordered_map<string, int*>& flags_int();
 
 // Processes all flags from the input
 void ProcessFlags(int* argc, char***argv);
-
 
 #endif //INC_42_FLAGS_H

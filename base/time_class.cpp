@@ -8,7 +8,6 @@
 
 Time::Time(std::chrono::system_clock::time_point time_point):
     time_point_(time_point) {
-
 }
 
 std::ostream& operator<<(std::ostream& out, const Time& time) {

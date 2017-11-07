@@ -5,8 +5,6 @@
 #ifndef INC_42_BASE_H
 #define INC_42_BASE_H
 
-
-
 #include "flags.h"
 #include "logging.h"
 #include "static_initialization.h"

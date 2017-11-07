@@ -25,7 +25,6 @@ private:
   friend std::ostream& operator<<(OStreamNewline output, T object);
 
   std::ostream& output_;
-
 };
 
 template<typename T>
